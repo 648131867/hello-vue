@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>第一个vue程序</title>
+</head>
+<body>
+<div id="app">
+  性别:
+  <input type="radio" name="i" value="男" v-model="aaa">男
+  <input type="radio" name="sex" value="女" v-model="aaa">女
+  <p>
+    选中了谁：{{aaa}}
+  </p>
+  下拉框:
+  <select v-model="aaa">
+    <option disabled value="">请选择</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+  <aaaaa v-for="item in items" v-bind:ss="item"/>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+
+  Vue.component("aaaaa",{
+    props: ['ss'],
+    template: '<li>{{ss}}</li>'
+  });
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      aaa: '',
+      items:["java","c++","c#"]
+    }
+  });
+</script>
+</body>
+</html>

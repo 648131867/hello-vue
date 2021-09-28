@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第一个vue程序</title>
+</head>
+<body>
+<div id="vue">
+  {{message}}
+  <h1 v-if="ok">Yes</h1>
+  <h1 v-else="ok">No</h1>
+  <h1 v-if="type=='A'">A</h1>
+  <h1 v-else-if="type=='B'">B</h1>
+  <h1 v-else-if="type=='D'">D</h1>
+  <h1 v-else>C</h1>
+  <li v-for="(item, index) in items">
+    {{item.aa}}  {{index}}
+  </li>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script type="text/javascript">
+  var vm = new Vue({
+    el: '#vue',
+    data: {
+      message: 'Hello!',
+      ok: true,
+      type: 'A',
+      items: [
+        {aa: 'aaa'},
+        {aa: 'bbb'},
+      ]
+    }
+  });
+</script>
+</body>
+</html>
